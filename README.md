@@ -17,8 +17,8 @@ Video conf based on [SimpleWebRTC.js](https://github.com/HenrikJoreteg/SimpleWeb
 * Responsive interface, working on smartphones, pads and desktops
 * Fully opensource
 
-You can try our demo instance here: https://vroom.im
+You can try our demo instance here: https://vroom.fws.fr
 
-Check documentation [here](https://vroom.im/documentation)
+Check documentation [here](https://vroom.fws.fr/documentation)
 
-You can also subscribe to the dev mailing list [here](http://list.vroom.im/mailman/listinfo/vroom-dev)
+WARNING: I unfortunately lost the original vroom.im domain name. The cybersquatter who owns it now has put a fake VROOM instance on http://vroom.im/. Please do not go here anymore, and use the new https://vroom.fws.fr address instead.

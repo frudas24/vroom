@@ -3,6 +3,7 @@
 # This file is part of the VROOM project
 # Released under the MIT licence
 # Copyright 2014-2015 Daniel Berteaud <daniel@firewall-services.com>
+use lib './lib';
 use Mojolicious::Lite;
 use Mojolicious::Plugin::Mail;
 use Mojolicious::Plugin::Database;
@@ -25,7 +26,6 @@ use DateTime;
 use Array::Diff;
 use Encode qw(encode_utf8);
 use Data::Dumper;
-use lib dirname($0) . '/lib';
 
 
 app->log->level('info');
@@ -1966,10 +1966,10 @@ any '/api' => sub {
     # Room persistence can only be set by admins
     if ($req->{param}->{persistent} ne '' &&
         $self->key_can_do_this({token => $token, action => 'set_persistent'})){
-      $room->{persistent} = ($req->{param}->{persistent} eq Mojo::JSON::true) ? '1' : '0';
+      $room->{persistent} = ($req->{param}->{persistent}) ? '1' : '0';
     }
     foreach my $pass (qw/join_password owner_password/){
-      if ($req->{param}->{$pass} eq Mojo::JSON::false){
+      if ($req->{param}->{$pass} eq "\0"){
         $room->{$pass} = undef;
       }
       elsif ($req->{param}->{$pass} ne ''){
